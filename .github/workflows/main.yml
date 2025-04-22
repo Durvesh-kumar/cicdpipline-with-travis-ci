@@ -3,15 +3,14 @@ name: sample travis file
 on: push
 
 jobs:
+ super-lint:
    name: super code lint 
    runs-on: ubuntu-latest
-
-     steps:
-         - name: Runs checkout
-           uses: actions/checkout@v2
-
-         - name: Runs super-lint code
-           uses: github/super-linter@v4
-           env:
-              DEFAULT_BRANCH: main
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   steps:
+       - name: Runs checkout
+         uses: actions/checkout@v2
+       - name: Runs super-lint code
+         uses: github/super-linter@v4
+         env:
+             DEFAULT_BRANCH: main
+             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
